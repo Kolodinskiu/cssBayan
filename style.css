@@ -92,7 +92,7 @@ input:checked + .mem .icon {
     font-size: 2.5rem;
   }
   .container {
-    max-width: 500px;
+    max-width: 1000px;
   }
   .mem {
     cursor: pointer;
