@@ -1,0 +1,100 @@
+@import url('./normalize.css');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: black;
+}
+.container {
+  max-width: 400px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+input {
+  display: none;
+}
+.mem {
+  display: block;
+  border-top: 1px solid rgb(170, 169, 169);
+  padding: 15px 0;
+  margin-top: 25px;
+}
+.mem-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon {
+  width: 40px;
+  height: 40px;
+  background-image: url(./imgs/plus.svg);
+  background-size: contain;
+  background-position: center;
+}
+.mem-img {
+  width: 100%;
+  margin: 15px auto 0;
+  max-height: 0;
+  transform: scale(0);
+  overflow: hidden;
+  transition: max-height 0.7s, transform 1.3s;
+}
+.mem-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+input:checked + .mem .mem-img {
+  max-height: 1500px;
+  transform: scale(1);
+}
+input:checked + .mem .icon {
+  background-image: url(./imgs/xmark.svg);
+}
+@media screen and (min-width: 820px) {
+  body {
+    font-size: 2rem;
+  }
+  .container {
+    max-width: 500px;
+  }
+  .content {
+    transition: 0.3s linear;
+    color: rgb(150, 70, 70);
+  }
+  .icon {
+    transition: opacity 0.3s;
+    opacity: 0;
+  }
+  .content:hover {
+    color: black;
+  }
+  .content:hover .icon {
+    opacity: 1;
+  }
+  input:checked + .mem {
+    color: black;
+  }
+}
+@media screen and (min-width: 1000px) {
+  body {
+    font-size: 2.5rem;
+  }
+  .container {
+    max-width: 500px;
+  }
+  .mem {
+    cursor: pointer;
+  }
+}
